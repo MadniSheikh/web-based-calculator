@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="calculator">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <span class="favorite">&#9733; Add to Favorites</span>
+      <span class="brand">Calculator-1.com</span>
+    </div>
+
+    <!-- Display -->
+    <div class="display">
+      <div class="memory-label">M<sub>1</sub>: 0</div>
+      <div class="copy-icon">&#9113;</div>
+      <div class="main-value" id="display">0</div>
+      <hr class="display-divider"/>
+      <div class="secondary-value" id="secondary">0</div>
+    </div>
+
+    <!-- Memory Buttons -->
+    <div class="memory-row">
+      <button class="mem-btn" onclick="memClear()">MC</button>
+      <button class="mem-btn" onclick="memRecall()">MR</button>
+      <button class="mem-btn" onclick="memMinus()">M-</button>
+      <button class="mem-btn" onclick="memPlus()">M+</button>
+    </div>
+
+    <!-- Button Grid -->
+    <div class="btn-grid">
+      <!-- Row 1 -->
+      <button class="num-btn" onclick="appendNum('7')">7</button>
+      <button class="num-btn" onclick="appendNum('8')">8</button>
+      <button class="num-btn" onclick="appendNum('9')">9</button>
+      <button class="op-btn gray" onclick="toggleSign()">+/-</button>
+      <button class="op-btn gray" onclick="backspace()">&#8594;</button>
+
+      <!-- Row 2 -->
+      <button class="num-btn" onclick="appendNum('4')">4</button>
+      <button class="num-btn" onclick="appendNum('5')">5</button>
+      <button class="num-btn" onclick="appendNum('6')">6</button>
+      <button class="op-btn dark" onclick="setOperator('*')">&#215;</button>
+      <button class="op-btn dark" onclick="setOperator('/')">&#247;</button>
+
+      <!-- Row 3 -->
+      <button class="num-btn" onclick="appendNum('1')">1</button>
+      <button class="num-btn" onclick="appendNum('2')">2</button>
+      <button class="num-btn" onclick="appendNum('3')">3</button>
+      <button class="op-btn dark" onclick="setOperator('-')">&#8722;</button>
+      <button class="op-btn blue equal-btn" onclick="calculate()">=</button>
+
+      <!-- Row 4 -->
+      <button class="op-btn red" onclick="clearAll()">C</button>
+      <button class="num-btn" onclick="appendNum('0')">0</button>
+      <button class="num-btn" onclick="appendDot()">.</button>
+      <button class="op-btn dark" onclick="setOperator('+')">+</button>
+      <!-- equal-btn spans row 3 col 5 & row 4 col 5 via grid -->
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>Decimal places - 2 <a href="#">(change)</a></span>
+      <span>PC/Mobile</span>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
